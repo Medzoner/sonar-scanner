@@ -11,3 +11,5 @@ RUN wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-s
     unzip sonar-scanner-cli-4.0.0.1744-linux.zip
 
 LABEL image=analysis
+
+CMD ['/opt/sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner', 'help']
