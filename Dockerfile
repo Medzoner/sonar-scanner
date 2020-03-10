@@ -1,7 +1,7 @@
 FROM openjdk:11-stretch
 
 RUN mkdir -p /var/www
-COPY --from=test /var/www /var/www
+
 WORKDIR /var/www
 
 # common
