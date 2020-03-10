@@ -1,14 +1,13 @@
 FROM openjdk:11-stretch
 
-RUN mkdir -p /var/www
-
-WORKDIR /var/www
+WORKDIR /opt
 
 # common
-RUN apt-get update && apt-get install -y --no-install-recommends wget unzip && rm -r /var/lib/apt/lists/*
-
-RUN wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.0.0.1744-linux.zip && \
-    unzip sonar-scanner-cli-4.0.0.1744-linux.zip
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends wget unzip && \
+    wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.0.0.1744-linux.zip && \
+    unzip sonar-scanner-cli-4.0.0.1744-linux.zip && \
+    rm -r /var/lib/apt/lists/*
 
 LABEL image=analysis
 
